@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/forgetPassword.dart';
+import 'package:whatsappclone/homePage.dart';
 import 'package:whatsappclone/main.dart';
 import 'package:whatsappclone/registerPage.dart';
 
@@ -191,46 +192,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 30,
                 ),
                 Container(
-                  height: 50,
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            side: MaterialStateProperty.all(
-                                BorderSide(color: Colors.black, width: 1)),
-                            shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                // Set border radius here
-                              ),
-                            ),
-                            backgroundColor:
-                                MaterialStateProperty.all(appBarColor),
-                            foregroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                          ),
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Sign In',
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Icon(Icons
-                                  .arrow_circle_right), // Add arrow icon here
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+  height: 60, // Adjust the height as needed
+  padding: EdgeInsets.only(left: 20, right: 20),
+  child: Row(
+    children: [
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
+          },
+          style: ButtonStyle(
+            side: MaterialStateProperty.all(
+              BorderSide(color: Colors.black, width: 1),
+            ),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all(appBarColor),
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Sign In',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(width: 30),
+              Icon(Icons.arrow_circle_right),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
                 SizedBox(
                   height: 30,
                 ),
@@ -260,7 +262,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontWeight: FontWeight.bold,
                                 color: appBarColor),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                  height: 30,
+                ),
                       ]),
                 ),
               ],
